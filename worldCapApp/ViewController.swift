@@ -27,9 +27,6 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     //populate pickerView using array inside array array = [[array1 text], [array2 text]]
     var data = [["USA","Italy","China","England","Brazil","Sweden","India"], ["Bejing","London","Rome","Delhi","WAshington D.C","BrazilCap","SwedenCap"]]
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -96,6 +93,10 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         let swedenCap = UIImage(named: "seCap.jpeg")
         let indiaCap = UIImage(named: "inCap.jpeg")
         
+        let mess = "Match The flags to capitals"
+        
+        let correctMess = "The capitals of \(item1) is \(item2)."
+        
         switch(item1) {
             
             //Country
@@ -147,36 +148,79 @@ class ViewController: UIViewController, UIPickerViewDelegate {
             case "WAshington D.C":
                 image2.image = usaCap
                 label2.text = "WASHINGTON D.C"
+                
+                if(label1.text == "United States Of America") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
                 break
             
             case "London":
                 image2.image = englandCap
                 label2.text = "LONDON"
+                
+                if(label1.text == "UNITED KINGDOM") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
                 break
             
             case "Bejing":
                 image2.image = chinaCap
                 label2.text = "THE REPUBLIC CHINA"
+                
+                if(label1.text == "CHINA") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
                 break
             
             case "BrazilCap":
                 image2.image = brazilCap
                 label2.text = "Brazil Capital"
+                
+                if(label1.text == "Brazil") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
+                
                 break
             
             case "Rome":
                 image2.image = italyCap
                 label2.text = "ROME"
+                
+                if(label1.text == "Italy") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
                 break
             
             case "SwedenCap":
                 image2.image = swedenCap
-                label2.text = "SWEDEN"
+                label2.text = "SWEDEN CAPITAL"
+                
+                if(label1.text == "SWEDEN") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
                 break
             
             case "Delhi":
                 image2.image = indiaCap
                 label2.text = "DELHI"
+                
+                if(label1.text == "INDIA") {
+                    message.text = correctMess
+                } else {
+                    message.text = mess
+                }
                 break
             
             default:
